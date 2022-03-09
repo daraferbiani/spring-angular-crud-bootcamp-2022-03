@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">BERANDA</h5>
+    <p class="card-text">Ini Halaman Beranda</p>
+
+    <table class="table table-dark">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Create_date</th>
+        <th>create_by</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let id of list">
+        <td>{{ id.id}}</td>
+        <td>{{ id.name }}</td>
+        <td>{{ id.Category }}</td>
+        <td>{{ id.Create_date}}</td>
+        <td>{{ id.Create_by}}</td>
+        <td>
+          <button routerLink="/update/{{id.category_id}}">Update</button>
+          <button (click)="deleteCategory(id.category_id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
